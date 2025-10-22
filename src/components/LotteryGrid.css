@@ -1,0 +1,152 @@
+.lottery-grid-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.lottery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 8px;
+  width: 360px;
+  height: 360px;
+  /* padding: 20px; */
+  background: #f8f8f8;
+  border: 3px solid #333333;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.grid-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 2px solid #cccccc;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.grid-item:hover {
+  border-color: #666666;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.grid-item.active {
+  background: linear-gradient(135deg, #333333 0%, #000000 100%);
+  border-color: #000000;
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.8), 
+              0 0 50px rgba(255, 255, 255, 0.6),
+              0 0 75px rgba(255, 255, 255, 0.4);
+  animation: glow 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.8), 
+                0 0 50px rgba(255, 255, 255, 0.6),
+                0 0 75px rgba(255, 255, 255, 0.4);
+  }
+  to {
+    box-shadow: 0 0 35px rgba(255, 255, 255, 1), 
+                0 0 70px rgba(255, 255, 255, 0.8),
+                0 0 100px rgba(255, 255, 255, 0.6);
+  }
+}
+
+.grid-item.active::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.3), 
+    transparent, 
+    rgba(255, 255, 255, 0.3), 
+    transparent
+  );
+  background-size: 200% 200%;
+  animation: shimmer 1s linear infinite;
+  border-radius: 10px;
+  z-index: -1;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% -200%;
+  }
+  100% {
+    background-position: 200% 200%;
+  }
+}
+
+.prize-content {
+  text-align: center;
+  padding: 8px;
+  width: 100%;
+}
+
+.prize-text {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.grid-item.active .prize-text {
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+  .lottery-grid {
+    width: 320px;
+    height: 320px;
+    padding: 15px;
+    gap: 6px;
+  }
+  
+  .prize-text {
+    font-size: 11px;
+  }
+  
+  .prize-content {
+    padding: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .lottery-grid {
+    width: 280px;
+    height: 280px;
+    padding: 12px;
+    gap: 4px;
+  }
+  
+  .prize-text {
+    font-size: 10px;
+  }
+  
+  .prize-content {
+    padding: 4px;
+  }
+  
+  .grid-item {
+    border-radius: 6px;
+  }
+}

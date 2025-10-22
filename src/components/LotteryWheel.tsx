@@ -12,12 +12,12 @@ const LotteryWheel: React.FC<LotteryWheelProps> = ({ isSpinning, onSpin }) => {
 
   // 奖品配置
   const prizes = [
-    { id: 1, text: '免费写真套餐', color: '#ff6b6b', probability: 5 },
-    { id: 2, text: '8折优惠券', color: '#4ecdc4', probability: 15 },
-    { id: 3, text: '精美相框', color: '#45b7d1', probability: 20 },
-    { id: 4, text: '再来一次', color: '#96ceb4', probability: 25 },
-    { id: 5, text: '谢谢参与', color: '#feca57', probability: 25 },
-    { id: 6, text: '神秘礼品', color: '#ff9ff3', probability: 10 }
+    { id: 1, text: '免费写真套餐', color: '#000000', probability: 5 },
+    { id: 2, text: '8折优惠券', color: '#333333', probability: 15 },
+    { id: 3, text: '精美相框', color: '#666666', probability: 20 },
+    { id: 4, text: '再来一次', color: '#999999', probability: 25 },
+    { id: 5, text: '谢谢参与', color: '#cccccc', probability: 25 },
+    { id: 6, text: '神秘礼品', color: '#444444', probability: 10 }
   ];
 
   // 计算每个扇形的角度

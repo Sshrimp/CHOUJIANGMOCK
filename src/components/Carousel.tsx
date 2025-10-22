@@ -9,31 +9,31 @@ interface CarouselProps {
 const Carousel: React.FC<CarouselProps> = ({ autoPlay = true, interval = 3000 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // 轮播图片数据 - 海马体照相馆主题
+  // 轮播图片数据 - 使用本地竖版图片
   const slides = [
     {
       id: 1,
-      image: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=400&fit=crop',
-      title: '专业写真摄影',
-      subtitle: '记录最美的你'
+      image: '/img/img_v3_02r9_0e360b2b-0e13-43ae-87f9-6958c1de5c9g.jpg',
+      title: '',
+      subtitle: ''
     },
     {
       id: 2,
-      image: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&h=400&fit=crop',
-      title: '情侣写真套餐',
-      subtitle: '爱情的美好瞬间'
+      image: '/img/img_v3_02r9_1fd88f52-4867-4695-a76f-1dc1b60fe1fg.jpg',
+      title: '',
+      subtitle: ''
     },
     {
       id: 3,
-      image: 'https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=800&h=400&fit=crop',
-      title: '家庭亲子摄影',
-      subtitle: '温馨家庭时光'
+      image: '/img/img_v3_02r9_a5e8c4f0-dae9-4cf9-913f-1dcca5d3b75g.jpg',
+      title: '',
+      subtitle: ''
     },
     {
       id: 4,
-      image: 'https://images.unsplash.com/photo-1554080353-a576cf803bda?w=800&h=400&fit=crop',
-      title: '商务形象照',
-      subtitle: '专业形象展示'
+      image: '/img/img_v3_02r9_e3728f96-8b69-4123-bf2f-eb468acc3abg.jpg',
+      title: '',
+      subtitle: ''
     }
   ];
 

@@ -11,7 +11,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(135deg, #ffeef8 0%, #f8e8ff 100%);
+  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
   min-height: 100vh;
 }
 
@@ -23,11 +23,11 @@ body {
 
 /* 头部样式 */
 .app-header {
-  background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+  background: linear-gradient(135deg, #333333 0%, #000000 100%);
   color: white;
   padding: 20px;
   text-align: center;
-  box-shadow: 0 4px 20px rgba(255, 105, 180, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .brand-title {
@@ -46,8 +46,22 @@ body {
 
 /* 轮播图区域 */
 .carousel-section {
-  padding: 20px;
   background: white;
+}
+
+/* Logo区域 */
+.logo-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 20px;
+  background: white;
+}
+
+.himo-logo {
+  max-width: 300px;
+  height: auto;
+  object-fit: contain;
 }
 
 /* 抽奖区域 */
@@ -55,12 +69,12 @@ body {
   flex: 1;
   padding: 30px 20px;
   text-align: center;
-  background: linear-gradient(135deg, #ffeef8 0%, #f8e8ff 100%);
+  background: #fff;
 }
 
 .section-title {
   font-size: 24px;
-  color: #ff1493;
+  color: #333333;
   margin: 0 0 8px 0;
   font-weight: bold;
 }
@@ -73,7 +87,7 @@ body {
 
 /* 抽奖按钮 */
 .spin-button {
-  background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+  background: linear-gradient(135deg, #333333 0%, #000000 100%);
   color: white;
   border: none;
   padding: 15px 40px;
@@ -82,7 +96,7 @@ body {
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
   margin-top: 20px;
   min-width: 160px;
   -webkit-tap-highlight-color: transparent;
@@ -91,7 +105,7 @@ body {
 
 .spin-button:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 105, 180, 0.6);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
 }
 
 .spin-button:disabled {
@@ -100,8 +114,54 @@ body {
   transform: none;
 }
 
+.spin-button.disabled {
+  background: linear-gradient(135deg, #999999 0%, #666666 100%);
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.spin-button.disabled:hover {
+  transform: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
 .spin-button.spinning {
   animation: pulse 1.5s infinite;
+}
+
+/* 抽奖状态提示 */
+.lottery-status-tip {
+  margin-top: 20px;
+  padding: 15px 20px;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.lottery-status-tip p {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.lottery-status-tip p:last-child {
+  margin-bottom: 0;
+}
+
+.result-preview {
+  color: #333 !important;
+  font-weight: 600 !important;
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  margin-top: 8px !important;
 }
 
 @keyframes pulse {
@@ -155,7 +215,7 @@ body {
 
 .result-content h3 {
   font-size: 24px;
-  color: #ff1493;
+  color: #333333;
   margin: 0 0 15px 0;
   font-weight: bold;
 }
@@ -168,7 +228,7 @@ body {
 }
 
 .close-button {
-  background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+  background: linear-gradient(135deg, #333333 0%, #000000 100%);
   color: white;
   border: none;
   padding: 12px 30px;
@@ -177,12 +237,12 @@ body {
   border-radius: 25px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 .close-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 105, 180, 0.6);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
 }
 
 /* 移动端适配 */
@@ -200,7 +260,7 @@ body {
   }
   
   .carousel-section {
-    padding: 15px;
+    background: white;
   }
   
   .lottery-section {
@@ -234,19 +294,24 @@ body {
   .result-text {
     font-size: 16px;
   }
+  
+  .lottery-status-tip {
+    margin-top: 15px;
+    padding: 12px 15px;
+  }
+  
+  .lottery-status-tip p {
+    font-size: 13px;
+  }
 }
 
 @media (max-width: 480px) {
-  .app-header {
-    padding: 12px;
+  .logo-section {
+    padding: 20px 15px;
   }
   
-  .brand-title {
-    font-size: 20px;
-  }
-  
-  .brand-subtitle {
-    font-size: 12px;
+  .himo-logo {
+    max-width: 250px;
   }
   
   .lottery-section {
@@ -265,5 +330,189 @@ body {
   
   .result-content {
     padding: 25px 15px;
+  }
+  
+  .lottery-status-tip {
+    margin-top: 12px;
+    padding: 10px 12px;
+  }
+  
+  .lottery-status-tip p {
+    font-size: 12px;
+  }
+  
+  .result-preview {
+    padding: 6px 10px !important;
+    font-size: 12px !important;
+  }
+}
+
+/* 活动详情 */
+.activity-info {
+  background: #fafafa;
+  padding: 30px 20px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.activity-section,
+.rules-section,
+.disclaimer-section,
+.contact-section {
+  max-width: 800px;
+  margin: 0 auto 25px auto;
+  background: white;
+  border-radius: 8px;
+  padding: 25px;
+  border: 1px solid #e8e8e8;
+}
+
+.activity-section h3,
+.rules-section h3,
+.disclaimer-section h3 {
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 15px 0;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+.activity-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.activity-item {
+  display: flex;
+  align-items: flex-start;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.activity-item .label {
+  color: #666;
+  font-weight: 500;
+  min-width: 80px;
+  margin-right: 10px;
+}
+
+.activity-item span:last-child {
+  color: #333;
+}
+
+.rules-list {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.rules-list p {
+  color: #555;
+  margin: 0 0 8px 0;
+  text-align: justify;
+}
+
+.disclaimer-text {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #666;
+}
+
+.disclaimer-text p {
+  margin: 0;
+  text-align: justify;
+}
+
+.contact-section {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.contact-item {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #333;
+}
+
+.company-info {
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+  margin-top: 15px;
+}
+
+.company-info p {
+  color: #888;
+  font-size: 12px;
+  margin: 0 0 5px 0;
+}
+
+.company-info p:last-child {
+  margin-bottom: 0;
+}
+
+/* 移动端适配 - 活动详情 */
+@media (max-width: 768px) {
+  .activity-info {
+    padding: 20px 15px;
+  }
+  
+  .activity-section,
+  .rules-section,
+  .disclaimer-section,
+  .contact-section {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .activity-section h3,
+  .rules-section h3,
+  .disclaimer-section h3 {
+    font-size: 16px;
+  }
+  
+  .contact-item {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .activity-info {
+    padding: 15px 10px;
+  }
+  
+  .activity-section,
+  .rules-section,
+  .disclaimer-section,
+  .contact-section {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .activity-item {
+    flex-direction: column;
+    gap: 2px;
+  }
+  
+  .activity-item .label {
+    min-width: auto;
+    margin-right: 0;
+    font-weight: 600;
+  }
+  
+  .rules-list,
+  .disclaimer-text {
+    font-size: 13px;
+  }
+  
+  .contact-item {
+    font-size: 13px;
+  }
+  
+  .company-info p {
+    font-size: 11px;
   }
 }
