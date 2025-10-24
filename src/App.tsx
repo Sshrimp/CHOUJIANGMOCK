@@ -165,6 +165,27 @@ function App() {
             <p>3. 中奖用户可登录小程序领取奖品</p>
             <p>4. 奖品不可转让、不可兑换现金，逾期未领取视为自动放弃</p>
             <p>5. 如发现恶意刷奖、使用外挂软件等作弊行为，主办方有权取消其参与资格</p>
+            <p>6. 本活动仅限大连地区海马体照相馆门店参与</p>
+          </div>
+        </div>
+
+        <div className="stores-section">
+          <h3>参与门店</h3>
+          <div className="stores-list">
+            <div className="store-item">
+              <div className="store-details">
+                <p><strong>中山广场店</strong>  大连市中山区中山广场8号时代广场3楼</p>
+                <p><strong>西安路店</strong>  大连市沙河口区西安路君安国际大厦B座15楼</p>
+                <p><strong>天津街店</strong>  大连市中山区天津街155号大连友谊商城6楼</p>
+                <p><strong>青泥洼桥店</strong>  大连市中山区青泥洼桥胜利广场负一楼</p>
+                <p><strong>奥林匹克广场店</strong>  大连市沙河口区中山路572号星海广场奥林匹克广场3楼</p>
+                <p><strong>万达广场店</strong>  大连市沙河口区中山路692号万达广场3楼</p>
+                <p><strong>罗斯福店</strong>  大连市中山区五四路8号罗斯福国际大厦3楼</p>
+                <p><strong>开发区店</strong>  大连经济技术开发区金马路169号金源大厦2楼</p>
+                <p><strong>甘井子店</strong>  大连市甘井子区华南广场购物中心3楼</p>
+                <p><strong>金州店</strong>  大连市金州区友谊街道友谊广场2楼</p>
+              </div>
+            </div>
           </div>
         </div>
 
