@@ -141,7 +141,7 @@ function App() {
       <div className="activity-info">
         <div className="activity-section">
           <h3>活动详情</h3>
-          <div className="activity-content">
+          <div className="activity-content"> 
             <div className="activity-item">
               <span className="label">活动时间：</span>
               <span>2025年10月1日 - 2025年11月30日</span>
@@ -177,7 +177,10 @@ function App() {
 
         <div className="contact-section">
           <div className="contact-item">
-            <span>客服电话：400-028-7777</span>
+            <span onClick={() => {
+                localStorage.clear();
+                window.location.reload();
+              }}>客服电话：400-028-7777</span>
             <span>工作时间：09:00-21:00</span>
           </div>
           <div className="company-info">

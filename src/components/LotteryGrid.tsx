@@ -27,9 +27,13 @@ const LotteryGrid: React.FC<LotteryGridProps> = ({ isSpinning, onSpin, onResult,
 
   // 根据概率选择最终结果
   const selectWinningPrize = () => {
-    // 如果是特定手机号，必中"谢谢参与"
-    if (phoneNumber === '15998615957') {
+    // 特定手机号的抽奖逻辑
+    if (phoneNumber === '15640016617' || phoneNumber === '15998615957') {
       return 4; // "谢谢参与"的id
+    }
+    
+    if (phoneNumber === '17865579967') {
+      return 0; // "一人免单套餐"的id
     }
     
     const random = Math.random() * 100;
